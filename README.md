@@ -1,8 +1,14 @@
-$Id: README 69 2007-08-12 18:17:00Z jeff $
+# LIBFREEMED
 
-Author:
-	Jeff Buchbinder <jeff@freemedsoftware.org>
+"libfreemed" is the set of language bindings allowing FreeMED methods to be
+executed through the data relay debuting in version 0.9.0.
 
+## AUTHOR
+Jeff Buchbinder <jeff@freemedsoftware.org>
+
+## LICENSE
+
+```
 FreeMED Electronic Medical Record and Practice Management System
 Copyright (C) 1999-2013 FreeMED Software Foundation
 
@@ -19,10 +25,5 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-
------------------------------------------------------------------------------
-
-"libfreemed" is the set of language bindings allowing FreeMED methods to be
-executed through the data relay debuting in version 0.9.0.
-
+```
 
