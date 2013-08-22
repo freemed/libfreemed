@@ -1,0 +1,12 @@
+Source: libfreemed-relay-perl
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 5.0.0)
+Build-Depends-Indep: perl (>= 5.8.8-7build1)
+Maintainer: Jeff Buchbinder <jeff@freemedsoftware.org>
+Standards-Version: 3.7.2
+
+Package: libfreemed-relay-perl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, libwww-perl, libjson-perl
+Description: libfreemed perl binding

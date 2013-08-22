@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<project name="freemed-client" default="run" basedir=".">
+	<property name="version" value="0.1"/>
+	<property name="src" value="src/"/>
+	<property name="build" value="build"/>
+	<property name="lib"  value="lib"/>
+	<property name="classpath"  value="classes"/>
+	<property name="jarname" value="freemed-client.jar"/>
+	<property name="docs" value="docs"/>
+	<property name="include" value="include"/>
+	<property name="runclass" value="org.freemedsoftware.json.Relay"/>
+
+	<target name="init">
+		<mkdir dir="${build}" />
+		<mkdir dir="${lib}" />
+		<mkdir dir="${docs}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="${classpath}"/>
+				<fileset dir="${include}">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar jarfile="${lib}/${jarname}" basedir="${build}/">
+			<manifest>
+				<attribute name="Main-Class" value="org.freemedsoftware.json.Relay"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="docs" depends="compile">
+		<javadoc packagenames="org.freemedsoftware.*"
+			sourcepath="${src}"
+			defaultexcludes="yes"
+			destdir="${docs}"
+			author="true"
+			version="true"
+			use="true"
+			windowtitle="FreeMED Relay API Documentation Version: ${version}">
+		</javadoc>
+	</target>
+ 
+	<target name="run" depends="jar">
+		<java classname="${runclass}" fork="yes">
+			<classpath>
+				<pathelement path="."/>
+				<pathelement path="${classpath}"/>
+				<fileset dir="${include}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${lib}">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}"/>
+		<delete dir="${lib}"/>
+		<delete dir="${docs}"/>
+		<delete dir="bin"/>
+		<delete verbose="on" includeemptydirs="true">
+			<fileset defaultexcludes="no" dir="." includes="**/*~"/>
+		</delete>
+	</target>
+</project>

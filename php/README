@@ -1,0 +1,40 @@
+ $Id: README 57 2007-08-05 13:11:16Z jeff $
+
+ Authors:
+      Jeff Buchbinder <jeff@freemedsoftware.org>
+
+ FreeMED Electronic Medical Record and Practice Management System
+ Copyright (C) 1999-2013 FreeMED Software Foundation
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+----------------------------------------------------------------------
+
+This is the PHP binding for the FreeMED 0.9.x+ data relay. It requires:
+
+ * PHP 5.1.0+
+ * PHP JSON extension (php5-json for Debian)
+ * PHP CURL extension (php5-curl for Debian)
+
+Documentation can be generated using NaturalDocs.
+
+This hasn't been fully tested, and the following caveats are known:
+
+ * Associative arrays are returned as stdObject objects, so the would need
+   to be casted to arrays if they are used in that way.
+ * Little to no error handling exists. Be ware of this.
+
+- Jeff (jefF@freemedsoftware.org) -
+

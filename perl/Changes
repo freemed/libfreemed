@@ -1,0 +1,9 @@
+Revision history for FreeMED::Relay
+
+0.2.1	2007-08-23 10:06 EDT
+	Fixes for a showstopping bug.
+	Perl dependencies handled properly.
+
+0.2     2007-08-13 20:26 EDT
+        First public release
+
